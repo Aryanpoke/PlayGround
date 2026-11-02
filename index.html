@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101611" />
+  <title>Everfall — Infinite Frontier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Everfall home"><span class="brand-mark">✦</span><span>EVERFALL<small>INFINITE FRONTIER</small></span></a>
+      <div class="world-label"><span class="live-dot"></span><span>THE VERDANT REACH</span><i>·</i><span class="world-sub">Whispering Wilds</span></div>
+      <div class="top-actions"><button class="icon-btn" id="sound-toggle" aria-label="Toggle sound">♫</button><button class="profile"><span class="profile-avatar">✧</span><span>WAYFARER<small>Wanderer</small></span><b>⌄</b></button></div>
+    </header>
+
+    <section class="game-layout">
+      <aside class="left-rail">
+        <section class="panel character-panel">
+          <div class="panel-heading"><span>YOUR WAYFARER</span><button class="dots" aria-label="More options">•••</button></div>
+          <div class="portrait-wrap"><div class="portrait-glow"></div><div class="portrait">♙</div><span class="class-badge" id="class-icon">⚔</span></div>
+          <h1 id="player-name">Aeron Vale</h1><p class="class-name" id="class-name">Swordsman <span>·</span> Level <b id="level">1</b></p>
+          <div class="xp-label"><span>EXPERIENCE</span><span id="xp-label">0 / 100 XP</span></div><div class="progress-track"><div class="progress-fill" id="xp-bar"></div></div>
+          <div class="resource-row"><span class="resource health"><i>♥</i><span><b id="hp-text">120 / 120</b><small>VITALITY</small></span></span><span class="resource mana"><i>✧</i><span><b id="mana-text">60 / 60</b><small>FOCUS</small></span></span></div>
+          <div class="divider"></div>
+          <div class="section-caption">ATTRIBUTES <button id="open-stats" class="plus-btn">+</button></div>
+          <div class="stat-list"><div><span>Strength</span><b id="str-stat">10</b></div><div><span>Agility</span><b id="agi-stat">8</b></div><div><span>Intelligence</span><b id="int-stat">5</b></div><div><span>Vitality</span><b id="vit-stat">12</b></div></div>
+          <div class="points-note"><span class="point-spark">✦</span><span><b id="stat-points">0</b> stat points available</span></div>
+        </section>
+        <section class="panel skill-summary"><div class="panel-heading"><span>SKILL POINTS</span><span class="skill-count"><i>✦</i><b id="skill-points">0</b></span></div><p>Spend points to master your path.</p><button class="text-action" id="skills-button">VIEW SKILL TREE <span>↗</span></button></section>
+        <button class="pvp-card" id="pvp-button"><span class="pvp-icon">⚔</span><span class="pvp-copy"><b>THE CRUCIBLE</b><small id="pvp-status">Reach ∞ to unlock PvP</small></span><span class="lock">⌑</span><span class="pvp-progress" id="pvp-progress"><i></i></span></button>
+      </aside>
+
+      <section class="world-column">
+        <div class="world-toolbar"><div class="location"><span class="location-mark">⌖</span><span><b>WHISPERING WILDS</b><small>FRONTIER · REGION 01</small></span></div><div class="weather"><span>☼</span> 18° <i>·</i> Clear skies</div><div class="map-actions"><button class="map-btn" id="map-toggle">⌗ <span>MAP</span></button><button class="map-btn" id="help-button">? <span>HOW TO PLAY</span></button></div></div>
+        <div class="world-frame"><canvas id="world" aria-label="Playable fantasy world"></canvas>
+          <div class="world-vignette"></div><div class="world-hud"><div class="zone-pill"><span class="live-dot"></span> SAFE FRONTIER <span class="zone-divider">/</span> MONSTERS <b id="mob-count">03</b></div><div class="mini-map"><canvas id="minimap" width="118" height="78"></canvas><span class="mini-label">WILDS <i>⌖</i></span></div></div>
+          <div class="target-card" id="target-card"><div class="target-avatar">☠</div><div class="target-info"><div class="target-title"><b id="target-name">Mossback Grazer</b><span id="target-level">LVL 1</span></div><small id="target-species">VERDANT BEAST · HOSTILE</small><div class="target-hp"><i id="target-hp-bar"></i></div></div><button id="target-close" aria-label="Clear target">×</button></div>
+          <div class="combat-toast" id="combat-toast"></div>
+          <div class="world-hint"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><span>move</span><i>·</i><span class="keycap">SPACE</span><span>attack</span></div>
+          <div class="map-overlay hidden" id="map-overlay"><div><span>⌖</span><b>WHISPERING WILDS</b><small>You're exploring the frontier</small></div></div>
+        </div>
+        <div class="world-footer"><span><i class="footer-dot"></i> Your journey is just beginning.</span><span id="save-status">PROGRESS SAVED LOCALLY <b>·</b></span></div>
+      </section>
+
+      <aside class="right-rail">
+        <section class="panel quest-panel"><div class="panel-heading"><span>FIELD JOURNAL</span><span class="journal-icon">▤</span></div><div class="quest-tag">MAIN QUEST <i>✦</i></div><h2>A Wilder Awakening</h2><p>The wilds stir with restless energy. Find your footing, Wayfarer.</p><div class="quest-objective"><span class="objective-check">1</span><span>Defeat creatures in the wilds</span><b id="quest-progress">0 / 3</b></div><div class="quest-reward"><span>REWARD</span><b>✧ 60 XP</b></div></section>
+        <section class="panel loot-panel"><div class="panel-heading"><span>RECENT FINDS</span><button class="view-all" id="inventory-button">INVENTORY <span>↗</span></button></div><div id="loot-list" class="loot-list"><div class="empty-loot"><span>◇</span><b>Your pack is waiting</b><small>Defeat creatures to find gear</small></div></div></section>
+        <section class="panel field-panel"><div class="panel-heading"><span>FIELD NOTES</span><span class="live-dot"></span></div><div class="field-note"><span class="note-icon">☘</span><span><b>Growing with you</b><small>Creatures adapt to your level. Stay sharp.</small></span></div><div class="field-note"><span class="note-icon gold">✦</span><span><b>Fortune favors the bold</b><small>Better drops await stronger adventurers.</small></span></div></section>
+      </aside>
+    </section>
+    <footer class="bottom-bar"><div class="quick-label"><b>QUICK ACTIONS</b><small>Ready when you are</small></div><div class="hotbar"><button class="action-slot active" id="attack-button"><span class="slot-key">1</span><span class="action-glyph">⚔</span><span class="action-label">STRIKE</span></button><button class="action-slot" id="skill-button"><span class="slot-key">2</span><span class="action-glyph frost">❄</span><span class="action-label">ARCANE BOLT</span><span class="cooldown" id="skill-cooldown"></span></button><button class="action-slot" id="potion-button"><span class="slot-key">3</span><span class="action-glyph potion">♜</span><span class="action-label">HEALING TONIC</span><span class="item-count" id="potion-count">3</span></button><div class="hotbar-divider"></div><button class="action-slot utility" id="bag-button"><span class="slot-key">I</span><span class="action-glyph">▣</span><span class="action-label">PACK</span></button><button class="action-slot utility" id="settings-button"><span class="slot-key">J</span><span class="action-glyph">☷</span><span class="action-label">JOURNAL</span></button></div><div class="session-meta"><span>✦ <b id="gold-count">24</b> <small>GOLD</small></span><span class="meta-separator"></span><span>◷ <b id="clock">DAY 01</b></span></div></footer>
+  </main>
+
+  <div class="modal-backdrop" id="modal-backdrop"><section class="modal class-modal" id="class-modal"><div class="modal-kicker">A NEW TALE BEGINS</div><h2>Choose your path</h2><p class="modal-intro">The frontier calls. What kind of legend will you become?</p><div class="class-grid"><button class="class-option selected" data-class="Swordsman"><span class="class-art sword-art">⚔</span><b>Swordsman</b><small>Unyielding strength & defense</small></button><button class="class-option" data-class="Wizard"><span class="class-art wizard-art">✧</span><b>Wizard</b><small>Elemental force from afar</small></button><button class="class-option" data-class="Ninja"><span class="class-art ninja-art">◈</span><b>Ninja</b><small>Swift strikes from the shadows</small></button><button class="class-option" data-class="Archer"><span class="class-art archer-art">➶</span><b>Archer</b><small>Precision across the wilds</small></button></div><button class="primary-button" id="begin-button">BEGIN YOUR JOURNEY <span>→</span></button><small class="modal-footnote">You can change your calling later at a sanctuary.</small></section></div>
+  <div class="modal-backdrop hidden" id="level-backdrop"><section class="modal level-modal"><div class="level-star">✦</div><div class="modal-kicker">A MOMENT OF GROWTH</div><h2>Level <span id="old-level">1</span> <i>→</i> <span id="new-level">2</span></h2><p class="modal-intro">A little stronger. A little wiser. The path stretches on.</p><div class="level-rewards"><div><span>✦</span><b>+5</b><small>SKILL POINTS</small></div><div><span>⌖</span><b>+3</b><small>STAT POINTS</small></div></div><div class="modal-hint">Attribute points can be spent in your character panel.</div><button class="primary-button" id="continue-button">CONTINUE <span>→</span></button></section></div>
+  <div class="modal-backdrop hidden" id="info-backdrop"><section class="modal info-modal"><button class="modal-close" id="info-close">×</button><div class="modal-kicker" id="info-kicker">FIELD GUIDE</div><h2 id="info-title">How to play</h2><div class="info-content" id="info-content"></div><button class="primary-button" id="info-done">GOT IT <span>→</span></button></section></div>
+  <script src="game.js"></script>
+</body>
+</html>
