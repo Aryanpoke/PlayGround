@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10110f">
+  <title>Emberfall — The Ashen Realm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="shell">
+    <header>
+      <a class="brand" href="#" aria-label="Emberfall home"><span class="brand-mark"><span>✦</span></span><span class="brand-name">EMBERFALL</span></a>
+      <div class="chapter"><span class="chapter-dot"></span> CHAPTER I <i></i> THE ASHEN REALM</div>
+      <button class="sound-toggle" id="sound-toggle" aria-label="Toggle ambient sound" title="Sound effects are coming soon">♫ <span>SOUND OFF</span></button>
+    </header>
+
+    <main>
+      <section id="select-screen" class="screen selection-screen">
+        <div class="eyebrow"><span></span> YOUR LEGEND BEGINS HERE <span></span></div>
+        <h1>Choose your <em>destiny</em></h1>
+        <p class="intro">The old kingdom is fading. A shadow stirs beneath the mountain.<br>Who will answer the call?</p>
+        <div class="class-grid" id="class-grid" aria-label="Choose your character class"></div>
+        <div class="selection-footer">
+          <div class="selection-hint"><span class="keycap">1</span> CHOOSE YOUR PATH <span class="hint-divider">·</span> <span class="keycap">ENTER</span> BEGIN YOUR JOURNEY</div>
+          <button class="primary-button" id="begin-button" disabled>BEGIN JOURNEY <span>⟶</span></button>
+        </div>
+        <p class="footnote">YOUR CHOICE SHAPES YOUR BATTLE. YOUR STORY IS YOURS TO WRITE.</p>
+      </section>
+
+      <section id="game-screen" class="screen game-screen" hidden>
+        <div class="game-heading"><div><div class="eyebrow"><span></span> THE FORGOTTEN PASS <span></span></div><h1 id="encounter-title">A shadow stirs</h1></div><div class="journey-count" id="journey-count">ENCOUNTER 01 <span>—</span> 03</div></div>
+        <div class="battle-layout">
+          <aside class="hero-panel panel" id="hero-panel">
+            <div class="panel-kicker">YOUR ADVENTURER</div>
+            <div class="hero-medallion" id="hero-medallion"></div>
+            <h2 id="hero-name"></h2><p class="hero-class" id="hero-class"></p>
+            <div class="level-line"><span>LEVEL <b id="hero-level">01</b></span><span><b id="hero-xp">0</b> / <span id="xp-next">40</span> XP</span></div>
+            <div class="xp-track"><span id="xp-fill"></span></div>
+            <div class="stat-block"><div class="stat-label"><span>VITALITY</span><span id="hero-hp-label"></span></div><div class="meter"><span class="hp-fill" id="hero-hp-fill"></span></div></div>
+            <div class="stat-block"><div class="stat-label"><span>FOCUS</span><span id="hero-mp-label"></span></div><div class="meter"><span class="mp-fill" id="hero-mp-fill"></span></div></div>
+            <div class="hero-meta"><span>✦ <b id="hero-gold">0</b> GOLD</span><span>✚ <b id="hero-potions">2</b> POTIONS</span></div>
+            <button class="text-button" id="retreat-button">↶ CHANGE CLASS</button>
+          </aside>
+
+          <section class="combat-panel panel" aria-label="Battle">
+            <div class="enemy-stage" id="enemy-stage">
+              <div class="stage-moon"></div><div class="stage-mountain mountain-back"></div><div class="stage-mountain mountain-front"></div>
+              <div class="enemy-glow"></div><div class="enemy-art" id="enemy-art" aria-hidden="true"></div>
+              <div class="enemy-plaque"><div class="enemy-type" id="enemy-type">WILD BEAST</div><h2 id="enemy-name">Ashen Wolf</h2><div class="enemy-health"><span id="enemy-hp-label"></span><div class="meter"><span class="enemy-fill" id="enemy-hp-fill"></span></div></div></div>
+              <div class="stage-caption">A COLD WIND CARRIES THE SMELL OF ASH</div>
+            </div>
+            <div class="combat-lower">
+              <div class="combat-log" id="combat-log" aria-live="polite"><span class="log-star">✦</span><span id="log-text">An Ashen Wolf blocks your path. What will you do?</span></div>
+              <div class="action-row">
+                <button class="action-button attack-action" id="attack-button"><span class="action-icon">⚔</span><span><b>ATTACK</b><small>Strike the enemy</small></span><kbd>A</kbd></button>
+                <button class="action-button skill-action" id="skill-button"><span class="action-icon">✧</span><span><b id="skill-name">CLASS SKILL</b><small id="skill-cost">A powerful technique</small></span><kbd>Q</kbd></button>
+                <button class="action-button potion-action" id="potion-button"><span class="action-icon">♜</span><span><b>USE POTION</b><small>Restore your vitality</small></span><kbd>P</kbd></button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="game-bottom"><span>✦ &nbsp; YOUR FATE IS NOT YET WRITTEN</span><button id="restart-button">START A NEW JOURNEY</button></div>
+      </section>
+    </main>
+    <footer><span>EMBERFALL</span><span>A SMALL ADVENTURE IN A WORLD OF ASH &amp; WONDER</span><span>✧</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="game.js"></script>
+</body>
+</html>

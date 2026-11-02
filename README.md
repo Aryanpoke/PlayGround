@@ -16,3 +16,9 @@
 - 👤 [Explore the creator's projects](https://omgithub.com/Aryanpoke).
 - 🌍 [Create with OMGithub](https://omgithub.com).
 <!-- omgithub:readme:end -->
+
+## Emberfall: The Ashen Realm
+
+A small, browser-based fantasy RPG. Pick a **Guardian**, **Arcanist**, or **Ranger**, then fight through three encounters using attacks, class skills, and healing potions. Earn XP and gold, level up, and save the realm.
+
+Open `index.html` in a browser to play. Use the on-screen buttons or keyboard shortcuts: **A** attack, **Q** class skill, **P** potion. On the class screen, press **1–3** to choose a class and **Enter** to begin.
