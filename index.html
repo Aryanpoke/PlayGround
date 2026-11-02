@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1014">
+  <title>Infinite Realms — Shattered Frontier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">∞</div><div><h1>INFINITE REALMS</h1><small>SHATTERED FRONTIER · FIELD TEST</small></div></div>
+      <div class="top-meta"><span class="pill"><i class="online-dot"></i>FRONTIER · LIVE</span><span class="pill" id="clock">DAY 01 · 08:42</span></div>
+    </header>
+    <section class="layout">
+      <aside class="panel profile">
+        <div class="panel-heading"><span>ADVENTURER</span><span class="dots">•••</span></div>
+        <div class="portrait"><div class="portrait-glow"></div><span id="portraitIcon">⚔</span><div class="portrait-label"><strong id="heroName">Kael Varyn</strong><small id="className">SWORDSMAN</small></div></div>
+        <div class="level-row"><span>LEVEL <b id="level">01</b></span><span id="milestone">MORTAL</span></div>
+        <div class="xp-track"><i id="xpFill"></i></div><div class="xp-label"><span id="xpText">0 / 80 XP</span><span>+5 SKILL / LV</span></div>
+        <div class="vitals"><div><label>VITALITY</label><b id="hpText">100 / 100</b><div class="bar"><i id="hpFill"></i></div></div><div><label>ENERGY</label><b id="energyText">60 / 60</b><div class="bar blue"><i id="energyFill"></i></div></div></div>
+        <div class="section-title">ATTRIBUTES <button id="autoBtn" class="tiny-button">AUTO · OFF</button></div>
+        <div class="attributes"><div><span>STR</span><b id="str">10</b></div><div><span>DEX</span><b id="dex">10</b></div><div><span>INT</span><b id="int">10</b></div><div><span>VIT</span><b id="vit">10</b></div></div>
+        <div class="section-title">EQUIPPED RELIC</div><div class="relic"><span class="relic-icon">✦</span><div><b id="relicName">Wayfarer's Edge</b><small id="relicDetail">COMMON · +4% physical damage</small></div></div>
+        <div class="class-switch"><label for="classSelect">CLASS</label><select id="classSelect"><option value="swordsman">⚔ Swordsman</option><option value="wizard">✧ Wizard</option><option value="ninja">☯ Ninja</option><option value="archer">➶ Archer</option></select></div>
+      </aside>
+      <section class="world panel">
+        <div class="world-head"><div><div class="eyebrow">THE OUTER MARCHES <span>·</span> ZONE 01</div><h2>Whispering Wilds</h2></div><button id="pauseBtn" class="icon-button" aria-label="Pause">Ⅱ</button></div>
+        <div class="canvas-wrap"><canvas id="game" aria-label="Top-down action RPG game world"></canvas><div class="toast" id="toast">A presence stirs in the wilds…</div><div class="world-tag"><i></i> SAFE HAVEN NEARBY</div><div class="touch-hint">TAP WORLD TO MOVE</div><div class="touch-controls"><div class="touch-skills"><button data-touch-skill="0">1</button><button data-touch-skill="1">2</button><button data-touch-skill="2">3</button><button data-touch-skill="3">4</button></div><button id="touchDodge" class="touch-dodge">DODGE</button><button id="touchAttack" class="touch-attack">ATTACK</button></div></div>
+        <div class="world-footer"><span><b id="enemyCount">03</b> THREATS NEARBY</span><span>WASD MOVE <i>·</i> CLICK ATTACK <i>·</i> SPACE DODGE</span></div>
+      </section>
+      <aside class="panel right-rail">
+        <div class="panel-heading"><span>FIELD NOTES</span><span class="live">● LIVE</span></div>
+        <div class="quest"><div class="quest-icon">✧</div><div class="quest-copy"><small>ACTIVE QUEST · 01</small><h3>Thin the Veil</h3><p>Clear the corrupted beasts from the old forest path.</p></div><div class="quest-progress"><span id="questCount">0 / 5</span><div class="bar"><i id="questFill"></i></div></div><div class="reward">REWARD <b>120 XP</b><span>+ frontier cache</span></div></div>
+        <div class="section-title">COMBAT ARTS <span class="points" id="skillPoints">0 PTS</span></div>
+        <div class="skill-list" id="skillList"></div>
+        <div class="section-title loot-title">RECENT FINDS <button class="tiny-button" id="lootClear">CLEAR</button></div>
+        <div class="loot-list" id="lootList"><div class="empty">Defeat a creature to find loot.</div></div>
+        <div class="arena-card"><div class="arena-symbol">⌖</div><div><small>ENDGAME ACTIVITY</small><b>Arena locked</b><span>Reach the ∞ milestone to enter</span></div><span class="lock">⌑</span></div>
+      </aside>
+    </section>
+    <footer class="controls"><div class="control-tip"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>MOVE</span></div><div class="control-tip"><kbd>CLICK</kbd><span>ATTACK</span></div><div class="control-tip"><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd><span>COMBAT ARTS</span></div><div class="control-tip"><kbd>SPACE</kbd><span>DODGE</span></div><div class="footer-note">PROTOTYPE · LOCAL PLAY · CROSS-PLATFORM INPUT READY</div></footer>
+  </main>
+  <div class="modal-backdrop" id="levelModal" hidden><section class="modal"><div class="modal-kicker">A NEW THRESHOLD</div><div class="modal-symbol">✦</div><h2>Level <span id="newLevel">2</span></h2><p>Your instincts sharpen. Choose an attribute to improve.</p><div class="attribute-choices" id="attributeChoices"></div><button class="continue" id="continueBtn">CONTINUE JOURNEY <span>→</span></button></section></div>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,18 +1,24 @@
-# PlayGround
+# Infinite Realms — Shattered Frontier
 
-<!-- omgithub:readme:start -->
-## 🚀 Build, play, and remix with OMGithub
+A small, self-contained browser prototype based on the Infinite Realms GDD. This is a local single-player vertical slice, not a production online RPG.
 
-**Created using [OMGithub.com](https://omgithub.com).**
+## Run
 
-[![OMGithub](https://img.shields.io/badge/OMGithub-Open%20project-orange?style=for-the-badge)](https://omgithub.com/Aryanpoke/PlayGround)
-[![GitHub](https://img.shields.io/badge/GitHub-Source-181717?logo=github&style=for-the-badge)](https://github.com/Aryanpoke/PlayGround)
+Open `index.html` in a modern browser, or serve this directory locally:
 
-- 🎮 [Open the project](https://omgithub.com/Aryanpoke/PlayGround).
-- ✨ [Remix this project](https://omgithub.com/?remix=Aryanpoke%2FPlayGround).
-- 💻 [Explore the source](https://github.com/Aryanpoke/PlayGround).
-- 🛠️ [Check build runs](https://github.com/Aryanpoke/PlayGround/actions).
-- 🐛 [Report an issue](https://github.com/Aryanpoke/PlayGround/issues).
-- 👤 [Explore the creator's projects](https://omgithub.com/Aryanpoke).
-- 🌍 [Create with OMGithub](https://omgithub.com).
-<!-- omgithub:readme:end -->
+```sh
+python3 -m http.server 3002
+```
+
+Then visit <http://localhost:3002>.
+
+## Play
+
+- **Move:** WASD / arrow keys; on touch, tap an empty spot in the world to move there.
+- **Aim and attack:** hold the left mouse button; on touch, tap a nearby creature to strike.
+- **Combat arts:** keys **1–4** (cost energy, with cooldowns).
+- **Dodge:** Space.
+- **Level up:** choose an attribute in the level-up modal. The Auto toggle allocates attributes automatically; click a combat art to spend a skill point and upgrade it.
+- **Class:** switch between Swordsman, Wizard, Ninja, and Archer from the class selector.
+
+The prototype includes top-down combat, enemy drops across the stated rarity tiers, XP and level-ups, basic class-specific skills, responsive layout, and touch-friendly movement. Multiplayer/cross-play, server-authoritative PvP, persistent saves, full skill-tree branches, and production-scale level balancing are not implemented.
